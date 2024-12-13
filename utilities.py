@@ -38,34 +38,32 @@ def view_books():
         print("No books in the library.")
         return
 
-    print(f"{'Title':<30}{'Author':<30}{'ISBN':<15}{'Year':<10}{'Quantity':<10}{'Timestamp':<20}")
+    print(f"| {'Title':<30} | {'Author':<30} | {'ISBN':<15} | {'Year':<10} | {'Quantity':<10} | {'Timestamp':<20} |")
     print("-" * 110)
     for book in books:
-        print(f"{book['title']:<30}{book['author']:<30}{book['isbn']:<15}{book['year']:<10}{book['quantity']:<10}{book.get('timestamp', 'N/A'):<20}")
+        print(f"| {book['title']:<30} | {book['author']:<30} | {book['isbn']:<15} | {book['year']:<10} | {book['quantity']:<10} | {book.get('timestamp', 'N/A'):<20} |")
 
 # Function to display Lend books
-def display_lend_info():
-    lend_info = load_json(LEND_FILE)
-    if not lend_info:
+def display_lent_books():
+    lent_books = load_json(LEND_FILE)
+    if not lent_books:
         print("No books have been lent.")
     else:
-        print("List of lent books:")
-        for lend_info in lend_info:
+        # Table headers
+        print("-" * 95)
+        print(f"| {'Book Title':<25} | {'Borrower Name':<20} | {'Phone':<15} | {'Lend Date':<20} | {'Return Date':<15} |")
+        print("-" * 95)
+
+        for lent_book in lent_books:
             # Safely access keys using get() method
-            borrower_name = lend_info.get('borrower_name', 'Unknown Borrower')
-            borrower_phone = lend_info.get('borrower_phone', 'Unknown Phone')
-            book_title = lend_info.get('book_title', 'Unknown Title')
-            lend_date = lend_info.get('lend_date', 'Unknown Date')
-            return_date = lend_info.get('return_date', 'Not returned yet')
+            borrower_name = lent_book.get('borrower_name', 'Unknown Borrower')
+            borrower_phone = lent_book.get('borrower_phone', 'Unknown Phone')
+            book_title = lent_book.get('book_title', 'Unknown Title')
+            lend_date = lent_book.get('lend_date', 'Unknown Date')
+            return_date = lent_book.get('return_date', 'Not returned yet')
 
             # Print the details of the lent book
-            print(f"Title: {lend_info['title']}, Borrower: {lend_info['borrower']}, "
-                  f"Lent Date: {lend_info['lent_date']}, Return Date: {lend_info['return_date'] if lend_info.get('return_date') else 'Not returned yet'}")
-            
+            print(f"| {book_title:<25} | {borrower_name:<20} | {borrower_phone:<15} | {lend_date:<20} | {return_date:<15} |")
 
-
-# "borrower_name": borrower_name,
-#                     "borrower_phone": borrower_phone,
-#                     "book_title": book['title'],
-#                     "lend_date": lend_date,
-#                     "return_date": return_date
+        # End table border
+        print("-" * 95)

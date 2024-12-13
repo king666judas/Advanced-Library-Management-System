@@ -16,5 +16,14 @@
         "quantity": 10,
         "price": 13.42,
         "timestamp": "2024-12-13 17:50:32"
+    },
+    {
+        "title": "The Doomsday Conspiracy",
+        "author": "Sydney Sheldon",
+        "isbn": "9780831709372",
+        "year": 1991,
+        "quantity": 11,
+        "price": 7.47,
+        "timestamp": "2024-12-13 23:13:20"
     }
 ]

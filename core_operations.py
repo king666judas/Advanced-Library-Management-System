@@ -110,7 +110,7 @@ def remove_book():
 # Function to Lend books
 def lend_book():
     books = load_json(LIBRARY_FILE)
-    lend_info = load_json(LEND_FILE)
+    lent_books = load_json(LEND_FILE)
 
     search_title = validate_non_empty_string(input("Enter the title of the book to lend: "), "Title")
     if not search_title:
@@ -124,7 +124,7 @@ def lend_book():
                 lend_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 return_date = input("Enter return date (YYYY-MM-DD): ")
 
-                lend_info.append({
+                lent_books.append({
                     "borrower_name": borrower_name,
                     "borrower_phone": borrower_phone,
                     "book_title": book['title'],
@@ -134,7 +134,7 @@ def lend_book():
 
                 book['quantity'] -= 1
                 save_json(LIBRARY_FILE, books)
-                save_json(LEND_FILE, lend_info)
+                save_json(LEND_FILE, lent_books)
                 print("Book lent successfully!")
             else:
                 print("There are not enough books available to lend.")

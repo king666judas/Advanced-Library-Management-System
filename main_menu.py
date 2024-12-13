@@ -1,7 +1,7 @@
 from core_operations import *
 from utilities import *
 
-
+# Function Main Menu to add, update, view, lend and remove book information
 def main_menu():
     while True:
         print("\nLibrary Management System")
@@ -11,7 +11,7 @@ def main_menu():
         print("4. Remove Book")
         print("5. Search Books")
         print("6. Lend Book")
-        print("7. Display lend info")
+        print("7. Display Lent Books")
         print("0. Exit")
 
         choice = input("Enter your choice: ")
@@ -29,7 +29,7 @@ def main_menu():
         elif choice == "6":
             lend_book()
         elif choice == "7":
-            display_lend_info()
+            display_lent_books()
         elif choice == "0":
             if confirm_action("Are you sure you want to exit?"):
                 print("Exiting program. Goodbye!")
