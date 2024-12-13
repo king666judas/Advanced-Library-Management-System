@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Lord of the Rings",
+        "author": "JRR Tolkien",
+        "isbn": "9788818123210",
+        "year": 1954,
+        "quantity": 9,
+        "price": 40.28,
+        "timestamp": "2024-12-13 17:49:56"
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "isbn": "9780425027066",
+        "year": 1975,
+        "quantity": 10,
+        "price": 13.42,
+        "timestamp": "2024-12-13 17:50:32"
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "borrower_name": "Fahad Bin Zafar",
+        "borrower_phone": "8899",
+        "book_title": "Dune",
+        "lend_date": "2024-12-13 17:28:45",
+        "return_date": "2024-12-30"
+    },
+    {
+        "borrower_name": "Zafar",
+        "borrower_phone": "7744",
+        "book_title": "Lord of the Rings",
+        "lend_date": "2024-12-13 17:51:26",
+        "return_date": "2024-12-27"
+    }
+]
