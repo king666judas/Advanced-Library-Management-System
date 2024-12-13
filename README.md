@@ -1,11 +1,13 @@
 Developer's Note: Book Management Program
+----------------------------------------------------------
 Overview
 The Book Management Program is a console-based application designed to manage a small library's operations effectively. It allows users to perform core functionalities such as adding books, lending books, viewing available books, and tracking lent books. The program is built with simplicity and efficiency in mind, using JSON files to store data persistently.
+----------------------------------------------------------
 
 Key Features
 
-Add Book:
-Users can add new books to the library.
+**Add Book:**
+Users can add new books to the library.\n
 Validation ensures no duplicate entries by title or ISBN.
 
 Lend Book:
